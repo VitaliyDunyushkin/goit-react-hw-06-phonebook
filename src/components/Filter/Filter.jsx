@@ -1,11 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
 
 import css from './filter.module.css';
+import { getFilterValue, changeFilter } from 'redux/filterSlice';
 
-export default function Filter({ onSearch, filter }) {
+export default function Filter() {
+  const dispatch = useDispatch();
+
   const handleChange = event => {
-    onSearch(event.target.value);
+    const value = event.target.value;
+    dispatch(changeFilter(value));
   };
 
   return (
@@ -15,7 +20,7 @@ export default function Filter({ onSearch, filter }) {
         className={css.input}
         type="text"
         name="filter"
-        value={filter}
+        value={useSelector(getFilterValue)}
         onChange={handleChange}
         title="Search contacts"
       />
@@ -23,7 +28,7 @@ export default function Filter({ onSearch, filter }) {
   );
 }
 
-Filter.propTypes = {
-  onSearch: PropTypes.func.isRequired,
-  filter: PropTypes.string.isRequired,
-};
+// Filter.propTypes = {
+//   onSearch: PropTypes.func.isRequired,
+//   filter: PropTypes.string.isRequired,
+// };
