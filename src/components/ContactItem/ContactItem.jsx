@@ -1,11 +1,11 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { deleteContact } from 'redux/contactsSlice';
 import { useDispatch } from 'react-redux';
 
 import css from './contactItem.module.css';
 
-export default function ContactItem({ id, name, number, onClick }) {
+export default function ContactItem({ id, name, number }) {
   const dispatch = useDispatch();
 
   return (
@@ -22,6 +22,8 @@ export default function ContactItem({ id, name, number, onClick }) {
   );
 }
 
-// ContactItem.propTypes = {
-//   onClick: PropTypes.func.isRequired,
-// };
+ContactItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
+};

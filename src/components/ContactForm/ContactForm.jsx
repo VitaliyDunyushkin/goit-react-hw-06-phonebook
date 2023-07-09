@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { addContact, getContacts } from 'redux/contactsSlice';
@@ -79,11 +78,3 @@ export default function ContactForm() {
     </>
   );
 }
-
-// ContactForm.propTypes = {
-//   state: PropTypes.exact({
-//     name: PropTypes.array.isRequired,
-//     number: PropTypes.string.isRequired,
-//   }),
-//   onFormSubmit: PropTypes.func.isRequired,
-// };

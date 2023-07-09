@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 
 import css from './filter.module.css';
@@ -27,8 +26,3 @@ export default function Filter() {
     </>
   );
 }
-
-// Filter.propTypes = {
-//   onSearch: PropTypes.func.isRequired,
-//   filter: PropTypes.string.isRequired,
-// };
